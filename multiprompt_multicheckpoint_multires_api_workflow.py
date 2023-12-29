@@ -96,7 +96,8 @@ def main():
         ckptname = os.path.basename(ckpt) # remove path from filename
         ckptname = os.path.splitext(ckptname)[0] # remove extension
         save_image_node["inputs"]["filename_prefix"] = f'{foldername}/{ckptname}_{w}x{h}' 
-
+        # note if you are using Windows, use f'{foldername}\\{ckptname}_{w}x{h}'
+        
         # everything set, add entire workflow to queue.
         queue_prompt(prompt_workflow)
 
